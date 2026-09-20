@@ -8,8 +8,8 @@ summary; that doc is the source of truth when the two disagree.
 
 A trust-building marketing/info website for a long-established (est. 1999), English-medium,
 community-rooted school in Bhora Kalan, Gurugram, Haryana. It is **not** a coaching-institute-style
-flashy site — lean into the school's real, decades-long identity (navy/red/gold brand colors, the
-Saraswati crest, a genuine reused tagline) rather than a generic template look.
+flashy site — lean into the school's real, decades-long identity (the Saraswati crest, a genuine
+reused tagline, the actual peach-plaster campus) rather than a generic template look.
 
 ## Non-negotiable content rule
 
@@ -24,8 +24,8 @@ be published without confirmed parental/guardian consent (see checklist).
 ## Confirmed facts (safe to use as-is)
 
 - **Name:** Uma Bharti Senior Secondary School (spelling is "Bharti", not "Bharati")
-- **Location:** Bhora Kalan, Gurugram (Gurgaon), Haryana — *village spelling itself still needs
-  verification, see checklist*
+- **Location:** Bhora Kalan, Gurugram (Gurgaon), Haryana — confirmed 2026-09-20 from the school
+  crest, which reads "BHORA KALAN- GURUGRAM". The newspaper's "Bhojkalan" was a misprint.
 - **Established:** 1999
 - **Medium:** English
 - **Classes:** Nursery to Class XII
@@ -81,25 +81,47 @@ docs/
 Routes: `/`, `/about`, `/about/chairman-message`, `/about/principal-message`, `/academics`,
 `/admissions`, `/achievements`, `/gallery`, `/contact`, `/notices`.
 
-## Design system (Section F of the spec)
+## Design system (as built — supersedes Section F of the spec)
 
-| Role | Hex |
-|---|---|
-| Primary (navy) | `#1B2A56` |
-| Secondary (crimson) | `#B3122A` |
-| Accent (gold) | `#D4AF37` |
-| Tertiary (magenta, sparing) | `#C2185B` |
-| Background | `#FBF9F5` |
-| Text | `#22252B` |
+Section F of the requirements doc proposed navy `#1B2A56` / crimson / gold `#D4AF37` with
+Playfair Display + Inter. **That has been superseded.** Navy+gold read as a generic "prestige
+institution" cliche and the saturated reds read as synthetic dye rather than material. The built
+palette is sampled from materials that physically exist at this school — the peach/salmon plaster
+facade in the school's own photographs, red-oxide (IPS) flooring, limewash, aged brass.
 
-These are drawn from crest/poster visual inspection, not the original logo file — treat as a starting
-point and re-derive from `content/design-tokens.json` once a source-of-truth logo asset lands. See
-that file for the full token set (also machine-readable for Tailwind config).
+| Role | Token | Hex |
+|---|---|---|
+| Dark fields (hero, footer) | `ink` | `#402219` |
+| Primary — headings, buttons | `oxide` | `#96452F` |
+| Hover / gradient | `oxide2` | `#A85539` |
+| Plaster tint | `clay` | `#B5674A` |
+| Utility icons, dates, metadata | `stone` | `#6B5D4F` |
+| Accent — rules, small fills | `brass` | `#C08A3E` |
+| Accent on dark fields | `brassLight` | `#E3C48A` |
+| Accent text on light | `brassDark` | `#7E5A1E` |
+| Validation + unverified flags ONLY | `error` | `#BF3B2B` |
+| Ground | `limewash` | `#F7F2E8` |
+| Cards / raised surfaces | `paper` | `#FDFAF3` |
+| Tinted panels | `sand` | `#EFE7D8` |
+| Hairlines | `line` | `#E3D9C7` |
+| Body text | `text` | `#2B211B` |
+| Secondary text | `muted` | `#6E605A` |
 
-- Headings: serif (Playfair Display or Merriweather). Body: sans-serif (Inter or Poppins).
-  Devanagari content: Noto Sans Devanagari.
-- 8px button radius, 12–16px card radius, 8pt spacing grid.
-- Minimal animation — subtle fade/slide on scroll only, no parallax.
+**Colour roles are strict:** oxide = brand and actions, stone = utility/metadata, brass = accent,
+error = validation only. Never use `error` as a brand colour; never let `brass` become a large fill.
+
+- Display: **Fraunces**. Body/UI: **Plus Jakarta Sans** (deliberately not Inter/Roboto).
+  Devanagari: **Noto Serif Devanagari**.
+- 8/14/22px radii; arched media frames (`180px 180px 14px 14px`) as the recurring motif.
+- Warm-tinted shadows — a cool shadow over this warm ground reads grey.
+- Motion is restrained: scroll reveals, counters, hover lifts. No parallax. All motion must be
+  disabled under `prefers-reduced-motion`.
+
+Full machine-readable token set: [content/design-tokens.json](content/design-tokens.json).
+Reference implementation: [design/homepage.html](design/homepage.html).
+
+**Open conflict:** the crest is navy/red/magenta/gold and does not sit naturally in this palette.
+Resolve before launch (see checklist).
 
 ## Data schema conventions
 
