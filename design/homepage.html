@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uma Bharti Senior Secondary School — Homepage Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2A56;
+    --navy-dark: #121c3a;
+    --crimson: #B3122A;
+    --gold: #D4AF37;
+    --magenta: #C2185B;
+    --bg: #FBF9F5;
+    --text: #22252B;
+    --text-soft: #565b66;
+    --white: #ffffff;
+    --border: #e7e2d8;
+    --radius-card: 14px;
+    --radius-btn: 8px;
+    --space: 8px;
+    --font-head: "Playfair Display", Georgia, serif;
+    --font-body: "Inter", system-ui, sans-serif;
+    --font-deva: "Noto Sans Devanagari", var(--font-body);
+    --shadow: 0 4px 18px rgba(27, 42, 86, 0.08);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.55;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-head); margin: 0; line-height: 1.15; color: var(--navy); }
+  p { margin: 0; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 72px 0; }
+  .eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 10px;
+    display: block;
+  }
+  .section-head { max-width: 640px; margin: 0 auto 40px; text-align: center; }
+  .section-head h2 { font-size: clamp(28px, 3.4vw, 38px); }
+  .section-head p { margin-top: 12px; color: var(--text-soft); font-size: 16px; }
+
+  /* ---------- Placeholder media treatment ---------- */
+  .placeholder {
+    background:
+      repeating-linear-gradient(135deg, #eef0f5, #eef0f5 10px, #e4e7ee 10px, #e4e7ee 20px);
+    border: 2px dashed #b8c0d4;
+    border-radius: var(--radius-card);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: #5b6478;
+    text-align: center;
+    font-size: 13px;
+    padding: 16px;
+  }
+  .placeholder .ph-icon { font-size: 22px; opacity: 0.6; }
+  .placeholder .ph-label { font-weight: 600; color: #3d4459; }
+  .placeholder .ph-ref { font-family: ui-monospace, monospace; font-size: 11px; opacity: 0.75; }
+
+  /* ---------- Dev banner (mockup only, not part of the live site) ---------- */
+  .dev-banner {
+    background: var(--navy-dark);
+    color: #cfd6ea;
+    font-size: 13px;
+    text-align: center;
+    padding: 8px 16px;
+  }
+  .dev-banner strong { color: #fff; }
+
+  /* ---------- Header ---------- */
+  header.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(251, 249, 245, 0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 24px;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; margin-right: auto; }
+  .crest-ph {
+    width: 48px; height: 48px; border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .brand-name { display: flex; flex-direction: column; line-height: 1.2; }
+  .brand-name strong { font-family: var(--font-head); font-size: 17px; color: var(--navy); }
+  .brand-name span { font-size: 11px; color: var(--text-soft); letter-spacing: 0.03em; }
+
+  nav.main-nav { display: flex; gap: 26px; }
+  nav.main-nav a {
+    font-size: 14px; font-weight: 600; color: var(--navy);
+    padding: 6px 0; border-bottom: 2px solid transparent;
+  }
+  nav.main-nav a:hover { border-color: var(--gold); }
+
+  .header-actions { display: flex; align-items: center; gap: 12px; }
+  .badge {
+    background: var(--crimson); color: #fff; font-size: 12px; font-weight: 700;
+    padding: 7px 12px; border-radius: 999px; white-space: nowrap;
+  }
+  .phone-chip {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 600; color: var(--navy);
+  }
+  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); margin: 5px 0; }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 13px 26px; border-radius: var(--radius-btn);
+    font-size: 15px; font-weight: 700; cursor: pointer; border: 2px solid transparent;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  .btn-primary { background: var(--navy); color: #fff; }
+  .btn-primary:hover { background: var(--gold); color: var(--navy-dark); }
+  .btn-outline { border-color: var(--white); color: var(--white); }
+  .btn-outline:hover { background: var(--white); color: var(--navy); }
+  .btn-outline-navy { border-color: var(--navy); color: var(--navy); }
+  .btn-outline-navy:hover { background: var(--navy); color: #fff; }
+  .btn-crimson { background: var(--crimson); color: #fff; }
+  .btn-crimson:hover { background: #8c0e21; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(18,28,58,0.55) 0%, rgba(18,28,58,0.82) 100%),
+      repeating-linear-gradient(135deg, #223258, #223258 10px, #1c2a4c 10px, #1c2a4c 20px);
+  }
+  .hero-bg .ph-note {
+    position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
+    font-size: 12px; color: #b9c3de; font-family: ui-monospace, monospace;
+    background: rgba(0,0,0,0.25); padding: 4px 10px; border-radius: 6px;
+  }
+  .hero-content { position: relative; z-index: 2; padding: 70px 0; max-width: 680px; }
+  .hero-content .eyebrow { color: var(--gold); }
+  .hero-content h1 { font-size: clamp(34px, 5vw, 54px); color: #fff; }
+  .hero-tagline { margin-top: 16px; font-size: 19px; color: #e6e9f4; font-weight: 500; }
+  .hero-facts { margin-top: 10px; font-size: 14px; color: #b9c3de; }
+  .hero-actions { display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
+
+  /* ---------- Quick facts strip ---------- */
+  .facts-strip {
+    background: var(--navy);
+    color: #fff;
+  }
+  .facts-strip .container {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px;
+    padding: 22px 24px;
+  }
+  .fact-item { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; }
+  .fact-item .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+
+  /* ---------- Intro ---------- */
+  .intro { text-align: center; }
+  .intro .container { max-width: 760px; }
+  .intro p { font-size: 18px; color: var(--text-soft); }
+  .motto {
+    margin-top: 26px; font-family: var(--font-deva); font-size: 20px; color: var(--navy);
+    font-weight: 600;
+  }
+  .motto small { display: block; font-family: var(--font-body); font-size: 13px; font-weight: 500; color: var(--text-soft); margin-top: 6px; font-style: italic; }
+
+  /* ---------- Chairman ---------- */
+  .chairman { background: var(--white); }
+  .chairman-card {
+    display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: center;
+    background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 36px;
+  }
+  .chairman-photo { width: 100%; aspect-ratio: 1; border-radius: 16px; }
+  .chairman-quote { font-family: var(--font-head); font-size: 21px; color: var(--navy); font-style: italic; }
+  .chairman-name { margin-top: 18px; font-weight: 700; color: var(--text); }
+  .chairman-title { font-size: 13px; color: var(--text-soft); margin-top: 2px; }
+  .chairman-link { margin-top: 18px; display: inline-block; font-size: 14px; font-weight: 700; color: var(--crimson); }
+
+  /* ---------- Highlight cards (academics / sports) ---------- */
+  .highlights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .highlight-card {
+    background: var(--white); border-radius: var(--radius-card); padding: 32px;
+    border-top: 4px solid var(--gold); box-shadow: var(--shadow);
+  }
+  .highlight-card .icon-circle {
+    width: 46px; height: 46px; border-radius: 50%; background: var(--navy);
+    color: var(--gold); display: flex; align-items: center; justify-content: center;
+    font-size: 20px; margin-bottom: 18px;
+  }
+  .highlight-card h3 { font-size: 20px; margin-bottom: 12px; }
+  .stat-row { display: flex; gap: 28px; margin: 18px 0; flex-wrap: wrap; }
+  .stat { }
+  .stat .num { font-family: var(--font-head); font-size: 30px; font-weight: 800; color: var(--crimson); }
+  .stat .lbl { font-size: 12px; color: var(--text-soft); text-transform: uppercase; letter-spacing: 0.04em; }
+  .highlight-card ul { margin: 14px 0 0; padding-left: 18px; color: var(--text-soft); font-size: 14px; }
+  .highlight-card ul li { margin-bottom: 6px; }
+  .card-link { display: inline-block; margin-top: 18px; font-size: 14px; font-weight: 700; color: var(--navy); border-bottom: 2px solid var(--gold); }
+
+  /* ---------- Facilities ---------- */
+  .facilities-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .facility-slot { aspect-ratio: 4/3; }
+  .facilities-note {
+    margin-top: 24px; text-align: center; font-size: 13px; color: var(--text-soft);
+    background: #fff8e6; border: 1px solid #f0dfa8; border-radius: 10px; padding: 12px 18px;
+  }
+
+  /* ---------- Admissions banner ---------- */
+  .admissions-banner {
+    background: linear-gradient(120deg, var(--crimson), var(--magenta));
+    color: #fff; border-radius: 24px; padding: 48px;
+    display: grid; grid-template-columns: 1.3fr 1fr; gap: 36px; align-items: center;
+  }
+  .admissions-banner h2 { color: #fff; font-size: 30px; }
+  .admissions-banner p { color: #ffe1e6; margin-top: 12px; font-size: 15px; }
+  .admissions-facts { list-style: none; margin: 20px 0 0; padding: 0; display: grid; gap: 10px; }
+  .admissions-facts li { display: flex; gap: 10px; font-size: 14px; font-weight: 600; }
+  .admissions-facts li::before { content: "✓"; color: var(--gold); font-weight: 800; }
+  .admissions-cta-box {
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 16px; padding: 28px; text-align: center;
+  }
+  .admissions-cta-box .big { font-family: var(--font-head); font-size: 26px; margin-bottom: 6px; }
+  .admissions-cta-box .btn { width: 100%; margin-top: 16px; }
+
+  /* ---------- Gallery ---------- */
+  .gallery-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 150px; gap: 14px;
+  }
+  .gallery-grid .g1 { grid-column: span 2; grid-row: span 2; }
+  .gallery-cta { text-align: center; margin-top: 32px; }
+
+  /* ---------- Notices ---------- */
+  .notices { background: var(--white); }
+  .notice-list { display: grid; gap: 14px; max-width: 760px; margin: 0 auto; }
+  .notice-row {
+    display: flex; align-items: center; gap: 18px; padding: 18px 22px;
+    background: var(--bg); border: 1px solid var(--border); border-radius: 12px;
+  }
+  .notice-date {
+    background: var(--navy); color: #fff; border-radius: 8px; padding: 8px 12px;
+    font-size: 12px; font-weight: 700; text-align: center; flex-shrink: 0; min-width: 78px;
+  }
+  .notice-body strong { display: block; font-size: 15px; color: var(--text); margin-bottom: 2px; }
+  .notice-body span { font-size: 13px; color: var(--text-soft); }
+
+  /* ---------- Location ---------- */
+  .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: stretch; }
+  .map-ph { min-height: 340px; }
+  .contact-card { display: flex; flex-direction: column; gap: 20px; justify-content: center; }
+  .contact-row { display: flex; gap: 14px; align-items: flex-start; }
+  .contact-row .ic {
+    width: 38px; height: 38px; border-radius: 10px; background: var(--navy); color: var(--gold);
+    display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;
+  }
+  .contact-row strong { display: block; font-size: 14px; color: var(--text); }
+  .contact-row span, .contact-row a { font-size: 14px; color: var(--text-soft); }
+  .verify-flag {
+    font-size: 11px; color: var(--crimson); font-weight: 700; margin-left: 6px;
+  }
+  .contact-actions { display: flex; gap: 12px; margin-top: 6px; flex-wrap: wrap; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--navy-dark); color: #cfd6ea; padding: 56px 0 24px;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 36px;
+    padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .footer-brand { display: flex; gap: 12px; align-items: center; margin-bottom: 14px; }
+  .footer-brand strong { font-family: var(--font-head); color: #fff; font-size: 17px; }
+  footer h4 { color: #fff; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 14px; font-family: var(--font-body); }
+  footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  footer ul a { font-size: 14px; color: #b9c3de; }
+  footer ul a:hover { color: var(--gold); }
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center; padding-top: 20px;
+    font-size: 12px; color: #8892ad; flex-wrap: wrap; gap: 10px;
+  }
+  .footer-crest-ph { width: 44px; height: 44px; border-radius: 50%; }
+  .social-ph {
+    display: inline-flex; align-items: center; gap: 8px; font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  @media (max-width: 900px) {
+    nav.main-nav { display: none; }
+    .hamburger { display: block; }
+    .header-actions .phone-chip { display: none; }
+    .chairman-card { grid-template-columns: 1fr; }
+    .chairman-photo { max-width: 180px; margin: 0 auto; }
+    .highlights-grid { grid-template-columns: 1fr; }
+    .facilities-grid { grid-template-columns: repeat(2, 1fr); }
+    .admissions-banner { grid-template-columns: 1fr; padding: 32px 24px; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery-grid .g1 { grid-column: span 2; }
+    .location-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px) {
+    section { padding: 52px 0; }
+    .facilities-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr; }
+    .stat-row { gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="dev-banner">
+  📐 <strong>Design mockup — not the live site.</strong> Dashed boxes are placeholders for real photos/data pending confirmation — see <code>docs/content-checklist.md</code>.
+</div>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <div class="crest-ph placeholder" style="font-size:9px; padding:0;">
+        <span class="ph-icon" style="font-size:14px;">🛡</span>
+      </div>
+      <div class="brand-name">
+        <strong>Uma Bharti Sr. Sec. School</strong>
+        <span>Bhora Kalan, Gurugram</span>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="#about">About</a>
+      <a href="#academics">Academics</a>
+      <a href="#admissions">Admissions</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <span class="badge">Admissions Open 2026–27</span>
+      <span class="phone-chip">📞 98132 18913</span>
+      <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home" style="padding:0;">
+  <div class="hero-bg">
+    <div class="ph-note">Hero photo pending — content/gallery.json: building-hero (needs higher-res original)</div>
+  </div>
+  <div class="container hero-content">
+    <span class="eyebrow">Nurturing Minds Since 1999</span>
+    <h1>Uma Bharti Senior Secondary School</h1>
+    <p class="hero-tagline">Building Strong Foundation for Tomorrow</p>
+    <p class="hero-facts">HBSE-affiliated · CBSE-pattern curriculum · English Medium · Nursery–XII</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#admissions">Enquire for Admission</a>
+      <a class="btn btn-outline" href="tel:9813218913">Call Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= QUICK FACTS ================= -->
+<section class="facts-strip" style="padding:0;">
+  <div class="container">
+    <div class="fact-item"><span class="dot"></span> Established 1999</div>
+    <div class="fact-item"><span class="dot"></span> English Medium</div>
+    <div class="fact-item"><span class="dot"></span> Nursery – Class XII</div>
+    <div class="fact-item"><span class="dot"></span> Bhora Kalan, Gurugram</div>
+  </div>
+</section>
+
+<!-- ================= INTRO ================= -->
+<section class="intro" id="about">
+  <div class="container">
+    <span class="eyebrow">Our Story</span>
+    <h2 style="font-size: clamp(26px,3.2vw,34px);">A community school with a 25-year history</h2>
+    <p style="margin-top:18px;">An English-medium school affiliated with HBSE, following the CBSE-pattern curriculum, serving Bhora Kalan, Gurugram from Nursery to Class XII since 1999.</p>
+    <div class="motto">
+      तमसो मा ज्योतिर्गमय
+      <small>Tamaso Ma Jyotirgamaya — “Lead me from darkness to light”</small>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CHAIRMAN ================= -->
+<section class="chairman">
+  <div class="container">
+    <div class="chairman-card">
+      <div class="chairman-photo placeholder">
+        <span class="ph-icon">🖼</span>
+        <span class="ph-label">Chairman portrait</span>
+        <span class="ph-ref">formal photo needed —<br>not the birthday graphic</span>
+      </div>
+      <div>
+        <p class="chairman-quote">“[Chairman's message — awaiting a short quote from Mr. Chauhan for this space.]”</p>
+        <p class="chairman-name">Mr. Randhir Singh Chauhan</p>
+        <p class="chairman-title">Chairman, Uma Bharti Senior Secondary School</p>
+        <a class="chairman-link" href="#">Read full message →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ACADEMIC + SPORTS HIGHLIGHTS ================= -->
+<section id="academics">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Track Record</span>
+      <h2>Results our students are proud of</h2>
+    </div>
+    <div class="highlights-grid">
+      <div class="highlight-card" id="achievements">
+        <div class="icon-circle">🎓</div>
+        <h3>Academic Results — 2024–25</h3>
+        <div class="stat-row">
+          <div class="stat"><div class="num">100%</div><div class="lbl">Class X Pass</div></div>
+          <div class="stat"><div class="num">100%</div><div class="lbl">Class XII Pass</div></div>
+        </div>
+        <ul>
+          <li>Class X — 46 students appeared, 18 with merit</li>
+          <li>Class XII — 44 students appeared, 8 with merit</li>
+        </ul>
+        <a class="card-link" href="#">View full results →</a>
+      </div>
+      <div class="highlight-card">
+        <div class="icon-circle">🏆</div>
+        <h3>Sports &amp; Athletics</h3>
+        <p style="color:var(--text-soft); font-size:15px; margin-top:6px;">
+          Multiple 1st / 2nd / 3rd place finishes at SGFI District- and Block-level
+          athletics competitions across track &amp; field events.
+        </p>
+        <ul>
+          <li style="color:var(--crimson); font-weight:600;">[Exact event/placement list — pending data verification, see checklist]</li>
+        </ul>
+        <a class="card-link" href="#">View all achievements →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FACILITIES ================= -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Campus</span>
+      <h2>Facilities</h2>
+    </div>
+    <div class="facilities-grid">
+      <div class="facility-slot placeholder"><span class="ph-icon">📚</span><span class="ph-label">Library</span><span class="ph-ref">pending confirmation</span></div>
+      <div class="facility-slot placeholder"><span class="ph-icon">🔬</span><span class="ph-label">Labs</span><span class="ph-ref">pending confirmation</span></div>
+      <div class="facility-slot placeholder"><span class="ph-icon">⚽</span><span class="ph-label">Sports Ground</span><span class="ph-ref">pending confirmation</span></div>
+      <div class="facility-slot placeholder"><span class="ph-icon">🚌</span><span class="ph-label">Transport</span><span class="ph-ref">pending confirmation</span></div>
+    </div>
+    <p class="facilities-note">This section is a layout placeholder only — labels shown are examples, not confirmed facts. The school needs to confirm which facilities actually exist on campus and supply photos before this section is built for real (see <code>docs/content-checklist.md</code>).</p>
+  </div>
+</section>
+
+<!-- ================= ADMISSIONS BANNER ================= -->
+<section id="admissions">
+  <div class="container">
+    <div class="admissions-banner">
+      <div>
+        <span class="eyebrow" style="color:#ffd7de;">Admissions 2026–27</span>
+        <h2>Scholarship-cum-Admission Test</h2>
+        <p>Classes 1st–XI · Science / Commerce / Humanities streams · 8 February 2026, 10:00 AM · Offline mode</p>
+        <ul class="admissions-facts">
+          <li>No admission fee</li>
+          <li>Full tuition-fee concession for the third child of the same parents</li>
+          <li>Nursery to Class XII, English medium</li>
+        </ul>
+      </div>
+      <div class="admissions-cta-box">
+        <div class="big">Ready to enquire?</div>
+        <p style="color:#ffe1e6; font-size:13px;">Our office will get back to you within 24 hours.</p>
+        <a class="btn btn-primary" href="#contact" style="background:#fff; color:var(--crimson);">Enquire Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">A Look Around</span>
+      <h2>Photo Gallery</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="g1 placeholder"><span class="ph-icon">🏫</span><span class="ph-label">Campus — building-hero</span></div>
+      <div class="placeholder"><span class="ph-icon">🏫</span><span class="ph-label">building-alt</span></div>
+      <div class="placeholder"><span class="ph-icon">🎉</span><span class="ph-label">Events</span></div>
+      <div class="placeholder"><span class="ph-icon">🏅</span><span class="ph-label">district-athletics</span></div>
+      <div class="placeholder"><span class="ph-icon">🏫</span><span class="ph-label">building-entrance</span></div>
+      <div class="placeholder"><span class="ph-icon">📰</span><span class="ph-label">Press coverage</span></div>
+    </div>
+    <div class="gallery-cta"><a class="btn btn-outline-navy" href="#">View Full Gallery</a></div>
+  </div>
+</section>
+
+<!-- ================= NOTICES ================= -->
+<section class="notices">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Stay Updated</span>
+      <h2>Notices &amp; Announcements</h2>
+    </div>
+    <div class="notice-list">
+      <div class="notice-row">
+        <div class="notice-date">08<br>FEB '26</div>
+        <div class="notice-body">
+          <strong>Scholarship-cum-Admission Test</strong>
+          <span>Classes 1st–XI, Science/Commerce/Humanities, 10:00 AM, offline mode.</span>
+        </div>
+      </div>
+      <div class="notice-row">
+        <div class="notice-date">2026</div>
+        <div class="notice-body">
+          <strong>Admissions Open 2026–27</strong>
+          <span>No admission fee. Full tuition-fee concession for the third child of the same parents.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOCATION & CONTACT ================= -->
+<section id="contact">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Find Us</span>
+      <h2>Location &amp; Contact</h2>
+    </div>
+    <div class="location-grid">
+      <div class="map-ph placeholder">
+        <span class="ph-icon">🗺️</span>
+        <span class="ph-label">Map embed pending</span>
+        <span class="ph-ref">address needs village-name<br>verification first (Bhora Kalan vs. Bhojkalan)</span>
+      </div>
+      <div class="contact-card">
+        <div class="contact-row">
+          <div class="ic">📍</div>
+          <div><strong>Address</strong><span>Bhora Kalan, Gurugram (Gurgaon), Haryana<span class="verify-flag">[village name unverified]</span></span></div>
+        </div>
+        <div class="contact-row">
+          <div class="ic">📞</div>
+          <div><strong>Phone</strong><span>9813218913 · 8053170444 · 8053170448</span></div>
+        </div>
+        <div class="contact-row">
+          <div class="ic">✉️</div>
+          <div><strong>Email</strong><span>umabhartischool@gmail.com</span></div>
+        </div>
+        <div class="contact-row">
+          <div class="ic">💬</div>
+          <div><strong>WhatsApp</strong><span>Pending — school to confirm which number is WhatsApp-enabled</span></div>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-crimson" href="tel:9813218913">Call Now</a>
+          <a class="btn btn-outline-navy" href="mailto:umabhartischool@gmail.com">Email Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="footer-crest-ph placeholder" style="font-size:8px; padding:0;"><span class="ph-icon" style="font-size:14px;">🛡</span></div>
+          <strong>Uma Bharti Sr. Sec. School</strong>
+        </div>
+        <p style="font-size:13px; color:#9aa4c2; max-width:280px;">Building Strong Foundation for Tomorrow — an English-medium, HBSE-affiliated school in Bhora Kalan, Gurugram, since 1999.</p>
+        <div class="social-ph placeholder" style="margin-top:16px; display:inline-flex;">
+          <span class="ph-icon" style="font-size:14px;">📘</span>
+          <span>Facebook link pending — need page URL</span>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#academics">Academics</a></li>
+          <li><a href="#admissions">Admissions</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>More</h4>
+        <ul>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#">Faculty</a></li>
+          <li><a href="#">Student Life</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>📞 9813218913</li>
+          <li>✉️ umabhartischool@gmail.com</li>
+          <li>📍 Bhora Kalan, Gurugram, Haryana</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Uma Bharti Senior Secondary School. All rights reserved.</span>
+      <span>Design mockup — placeholders pending school confirmation</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Minimal mobile nav toggle — mockup-level interactivity only.
+  document.querySelector('.hamburger')?.addEventListener('click', function () {
+    const nav = document.querySelector('.main-nav');
+    const open = nav.style.display === 'flex';
+    nav.style.display = open ? 'none' : 'flex';
+    nav.style.cssText += open ? '' : 'position:absolute; top:64px; left:0; right:0; background:#FBF9F5; flex-direction:column; padding:16px 24px; border-bottom:1px solid #e7e2d8; gap:14px;';
+  });
+</script>
+
+</body>
+</html>
