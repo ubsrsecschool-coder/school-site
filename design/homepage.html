@@ -124,6 +124,21 @@ section{position:relative}
   font-family:var(--f-display);font-size:clamp(56px,9vw,120px);font-weight:400;
   color:rgba(227,196,138,.15);letter-spacing:.06em;user-select:none;
 }
+/* a frame holding a real photograph */
+.frame.has-img > img{
+  position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;
+  transition:transform .7s var(--ease);
+}
+.frame.has-img::before{z-index:2;opacity:0;transition:opacity .4s var(--ease)}
+/* warm wash so photographs sit inside the palette instead of fighting it */
+.frame.has-img::after{
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:
+    linear-gradient(to top,rgba(64,34,25,.5) 0%,rgba(64,34,25,.12) 38%,transparent 62%),
+    linear-gradient(140deg,rgba(150,69,47,.16),transparent 55%);
+  mix-blend-mode:normal;opacity:1;
+}
+.frame.has-img:hover > img{transform:scale(1.04)}
 .frame > .cap{
   position:absolute;left:14px;bottom:14px;z-index:3;
   display:inline-flex;align-items:center;gap:7px;max-width:calc(100% - 28px);
@@ -574,10 +589,9 @@ footer ul a:hover{color:var(--brass-lt)}
       </div>
     </div>
     <div class="hero-art rv rv-d2">
-      <div class="frame">
+      <div class="frame has-img">
+        <img src="../public/images/campus/campus-peach-facade.jpg" alt="The peach-plastered main block of Uma Bharti Senior Secondary School, with white columns at the entrance and a red sign reading Uma Bharti Sr. Sec. School.">
         <span class="ring"></span>
-        <span class="glyph" aria-hidden="true">UB</span>
-        <span class="cap"><span class="dot"></span>Campus photograph · awaiting high-res original</span>
       </div>
       <div class="badge">
         <b data-count="100" data-suffix="%">0%</b>
@@ -730,17 +744,21 @@ footer ul a:hover{color:var(--brass-lt)}
     <div class="head center">
       <span class="eyebrow center rv">The Campus</span>
       <h2 class="h-lg rv rv-d1">Where the day happens.</h2>
-      <p class="lede rv rv-d2">Photographs of the school building, classrooms and grounds will fill this section once high-resolution originals are supplied.</p>
+      <p class="lede rv rv-d2">Two blocks of the campus, photographed by the school. Interiors and grounds still to come.</p>
     </div>
     <div class="campus-grid">
-      <div class="frame rv rv-d1"><span class="ring"></span><span class="glyph" aria-hidden="true">01</span><span class="cap"><span class="dot"></span>Main building</span></div>
-      <div class="frame rv rv-d2"><span class="ring"></span><span class="glyph" aria-hidden="true">02</span><span class="cap"><span class="dot"></span>Second block</span></div>
-      <div class="frame rv rv-d3"><span class="ring"></span><span class="glyph" aria-hidden="true">03</span><span class="cap"><span class="dot"></span>Entrance</span></div>
+      <div class="frame has-img rv rv-d1">
+        <img src="../public/images/campus/campus-white-block.jpg" alt="A three-storey white block with teal window frames, seen from the street behind a wooden gate.">
+        <span class="ring"></span>
+        <span class="cap">Second block &amp; gate</span>
+      </div>
+      <div class="frame rv rv-d2"><span class="ring"></span><span class="glyph" aria-hidden="true">02</span><span class="cap"><span class="dot"></span>Classrooms</span></div>
+      <div class="frame rv rv-d3"><span class="ring"></span><span class="glyph" aria-hidden="true">03</span><span class="cap"><span class="dot"></span>Library</span></div>
       <div class="frame rv rv-d4"><span class="ring"></span><span class="glyph" aria-hidden="true">04</span><span class="cap"><span class="dot"></span>Grounds</span></div>
     </div>
     <p class="note-strip rv">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-      <span>No facility list is shown yet. The school still needs to confirm which facilities exist on campus — library, laboratories, playground, transport, medical room — and supply photographs. Two supplied building photographs also look architecturally different and need to be confirmed as the same campus. Tracked in <code>docs/content-checklist.md</code>.</span>
+      <span>No facility list is shown yet — the school still needs to confirm which facilities exist on campus (library, laboratories, playground, transport, medical room) and supply photographs. A third supplied photograph is being held back because its signage carries the outdated “Uma Bharati” spelling. Tracked in <code>docs/content-checklist.md</code>.</span>
     </p>
   </div>
 </section>

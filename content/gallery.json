@@ -1,34 +1,54 @@
 [
   {
-    "id": "building-hero",
+    "id": "campus-peach-facade",
     "section": "campus",
-    "caption": "School building — peach façade, columns",
-    "sourceImage": "image-11.jpg",
-    "verified": false,
-    "note": "Best hero candidate; needs a higher-resolution original. Confirm relationship to image-12/13 signage."
+    "src": "/images/campus/campus-peach-facade.jpg",
+    "raw": "/images/raw/campus-peach-facade-original.jpeg",
+    "alt": "The peach-plastered main block of Uma Bharti Senior Secondary School, with white columns at the entrance and a red sign reading Uma Bharti Sr. Sec. School.",
+    "caption": "Main block",
+    "width": 739,
+    "height": 666,
+    "verified": true,
+    "usable": true,
+    "note": "Supplied by the school 2026-09-20. Signage reads the correct 'UMA BHARTI SR. SEC. SCHOOL'. Best hero candidate. Cropped from a phone screenshot — a full-resolution original would still be better for a full-bleed hero."
   },
   {
-    "id": "building-alt",
+    "id": "campus-white-block",
     "section": "campus",
-    "caption": "School building — white/teal façade, taller block",
-    "sourceImage": "image-12.jpg",
-    "verified": false,
-    "note": "Confirm whether this is the same campus as image-11/13 before using both."
+    "src": "/images/campus/campus-white-block.jpg",
+    "raw": "/images/raw/campus-white-block-original.jpeg",
+    "alt": "A three-storey white block of Uma Bharti Senior Secondary School with teal window frames, seen from the street behind a wooden gate, with a blue signboard reading Uma Bharti Sr. Sec. School, English Medium, Permanent Recognised.",
+    "caption": "Second block and main gate",
+    "width": 739,
+    "height": 740,
+    "verified": true,
+    "usable": true,
+    "note": "Supplied by the school 2026-09-20. Correct spelling on the signboard, which also shows 'English Medium' and 'Permanent Recognised'. Architecturally different from the peach block — school still needs to confirm these are two blocks of the same campus."
   },
   {
-    "id": "building-entrance",
+    "id": "campus-tan-block",
     "section": "campus",
-    "caption": "School building — festive entrance decor",
-    "sourceImage": "image-13.jpg",
+    "src": "/images/campus/campus-tan-block.jpg",
+    "raw": "/images/raw/campus-tan-block-original.jpeg",
+    "alt": "A tan-coloured block of the school with green window glass and white columns at the entrance.",
+    "caption": "Tan block",
+    "width": 739,
+    "height": 740,
     "verified": false,
-    "note": "Signage in this photo reads 'Uma Bharati School' — outdated/incorrect spelling, do not use as a reference for current branding. Confirm current signage before publishing this image."
+    "usable": false,
+    "note": "DO NOT PUBLISH AS-IS. The pediment signage reads 'UMA BHARATI SCHOOL' — the outdated misspelling the school has confirmed is wrong. Either retake the photograph after the signage is corrected, or crop so the signage is not legible. Held out of the live gallery until then."
   },
   {
     "id": "crest",
     "section": "brand",
-    "caption": "School crest (Saraswati emblem)",
-    "sourceImage": "image-10.jpg",
-    "verified": false,
-    "note": "Request a high-resolution transparent PNG or vector version for header/footer/favicon use."
+    "src": "/images/brand/crest.jpg",
+    "raw": "/images/raw/crest-original.jpeg",
+    "alt": "Crest of Uma Bharti Senior Secondary School: a red shield containing Saraswati seated on a lotus within a gold ring, the motto Tamaso Ma Jyotirgamaya in Devanagari beneath, and the words Bhora Kalan, Gurugram below the shield.",
+    "caption": "School crest",
+    "width": 1108,
+    "height": 1280,
+    "verified": true,
+    "usable": false,
+    "note": "Supplied 2026-09-20. Raster on a solid white background, so it cannot sit on the limewash ground or the dark footer without a visible white box. Needs a transparent PNG or vector before it can replace the 'UB' monogram placeholder in the header and footer. Also the source that confirmed the village spelling: the crest reads 'BHORA KALAN- GURUGRAM'."
   }
 ]
