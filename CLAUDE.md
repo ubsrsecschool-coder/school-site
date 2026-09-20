@@ -4,6 +4,9 @@ Project context for Claude Code sessions working in this repo. Full detail lives
 [docs/requirements-analysis.md](docs/requirements-analysis.md) — this file is the quick-reference
 summary; that doc is the source of truth when the two disagree.
 
+**Building the site? Start with [PLAN.md](PLAN.md)** — the engineering sequence, the publish-gate
+architecture, and the phase exit criteria.
+
 ## What this project is
 
 A trust-building marketing/info website for a long-established (est. 1999), English-medium,
