@@ -1,27 +1,48 @@
 {
+  "_palette": "Maroon & Cream",
+  "_rationale": "Re-weighted from the school's own crest colours. The crimson already on the crest leads; navy drops to a supporting slate; gold is an accent only (rules, highlights, dark-field text) rather than a fill. Navy+gold as a pair was dropped as an over-used 'prestige institution' cliche, and a cool primary on a warm ground read muddy.",
   "colors": {
-    "primary": { "value": "#1B2A56", "role": "navy — crest text, headers" },
-    "secondary": { "value": "#B3122A", "role": "crimson red — shield border, banners" },
-    "accent": { "value": "#D4AF37", "role": "gold — trophies, laurels, highlights" },
-    "tertiary": { "value": "#C2185B", "role": "magenta — crest emblem background, sparing use only" },
-    "background": { "value": "#FBF9F5", "role": "warm off-white" },
-    "text": { "value": "#22252B", "role": "charcoal" }
+    "ink": { "value": "#3F0D1A", "role": "deepest maroon — hero, dark sections, footer" },
+    "maroon": { "value": "#7A1B2E", "role": "primary — headings, buttons, links" },
+    "maroon2": { "value": "#94243A", "role": "lighter maroon — gradients, hover states" },
+    "maroonSoft": { "value": "#A8455A", "role": "tint — italic type, hover borders" },
+    "slate": { "value": "#2A3550", "role": "supporting navy — utility icons, date blocks, metadata" },
+    "gold": { "value": "#D9A441", "role": "accent — rules, small fills, text on dark fields" },
+    "goldLight": { "value": "#EFD3A0", "role": "accent tint — type and hairlines on dark fields" },
+    "goldDark": { "value": "#8A6318", "role": "accent darkened for small text on cream (5.2:1)" },
+    "error": { "value": "#C62828", "role": "form validation and 'unverified' flags ONLY — never a brand colour" },
+    "cream": { "value": "#FDF9F2", "role": "page ground" },
+    "paper": { "value": "#FFFDF8", "role": "raised surfaces, cards" },
+    "sand": { "value": "#F5EDE0", "role": "tinted panels, icon chip backgrounds" },
+    "line": { "value": "#E8DCCB", "role": "hairlines, borders" },
+    "text": { "value": "#1F1A1C", "role": "warm charcoal body text (16.4:1 on cream)" },
+    "muted": { "value": "#6B5C60", "role": "warm muted secondary text (6.0:1 on cream)" }
+  },
+  "colorRoles": {
+    "brandAndActions": "maroon",
+    "utilityAndMetadata": "slate",
+    "accent": "gold",
+    "validationOnly": "error"
   },
   "typography": {
-    "heading": { "family": "Playfair Display, Merriweather, serif", "note": "conveys heritage/trust" },
-    "body": { "family": "Inter, Poppins, sans-serif" },
-    "devanagari": { "family": "Noto Sans Devanagari, sans-serif", "note": "for the Sanskrit motto and any Hindi content" }
+    "display": { "family": "Fraunces, Georgia, 'Times New Roman', serif", "note": "soft serif with optical sizing — heritage without stuffiness" },
+    "body": { "family": "'Plus Jakarta Sans', system-ui, -apple-system, sans-serif", "note": "deliberately not Inter/Roboto, which read as template defaults" },
+    "devanagari": { "family": "'Noto Serif Devanagari', serif", "note": "serif so the Sanskrit motto shares a voice with the English display face" }
   },
-  "radius": {
-    "button": "8px",
-    "card": "12-16px"
-  },
-  "spacing": {
-    "grid": "8pt"
+  "radius": { "sm": "8px", "md": "14px", "lg": "22px", "arch": "180px 180px 14px 14px" },
+  "spacing": { "grid": "8pt" },
+  "shadows": {
+    "note": "warm-tinted — a cool shadow on a warm ground reads grey and muddy",
+    "sh1": "0 1px 2px rgba(63,13,26,.05), 0 8px 24px -12px rgba(63,13,26,.18)",
+    "sh2": "0 2px 4px rgba(63,13,26,.07), 0 24px 56px -20px rgba(63,13,26,.26)"
   },
   "motion": {
-    "level": "minimal",
-    "note": "subtle fade/slide on scroll only — no parallax or heavy motion"
+    "level": "restrained",
+    "easing": "cubic-bezier(.2,.7,.3,1)",
+    "note": "scroll reveals, counters and hover lifts only — no parallax; all disabled under prefers-reduced-motion"
   },
-  "_source_of_truth_note": "Palette derived from visual inspection of crest/posters, not the original logo file. Re-derive exact hex values once a source logo asset is supplied (see docs/content-checklist.md)."
+  "motif": {
+    "arch": "Arched media frames reference school architecture and let a missing photograph read as an intentional frame rather than a broken image."
+  },
+  "_source_of_truth_note": "Hex values are a designed system, not sampled from the original logo file. Re-check against the crest once a high-resolution or vector logo asset is supplied (see docs/content-checklist.md)."
 }
