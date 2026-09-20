@@ -1,0 +1,34 @@
+[
+  {
+    "id": "building-hero",
+    "section": "campus",
+    "caption": "School building — peach façade, columns",
+    "sourceImage": "image-11.jpg",
+    "verified": false,
+    "note": "Best hero candidate; needs a higher-resolution original. Confirm relationship to image-12/13 signage."
+  },
+  {
+    "id": "building-alt",
+    "section": "campus",
+    "caption": "School building — white/teal façade, taller block",
+    "sourceImage": "image-12.jpg",
+    "verified": false,
+    "note": "Confirm whether this is the same campus as image-11/13 before using both."
+  },
+  {
+    "id": "building-entrance",
+    "section": "campus",
+    "caption": "School building — festive entrance decor",
+    "sourceImage": "image-13.jpg",
+    "verified": false,
+    "note": "Signage in this photo reads 'Uma Bharati School' — outdated/incorrect spelling, do not use as a reference for current branding. Confirm current signage before publishing this image."
+  },
+  {
+    "id": "crest",
+    "section": "brand",
+    "caption": "School crest (Saraswati emblem)",
+    "sourceImage": "image-10.jpg",
+    "verified": false,
+    "note": "Request a high-resolution transparent PNG or vector version for header/footer/favicon use."
+  }
+]

@@ -1,0 +1,60 @@
+[
+  {
+    "id": "board-results-2024-25",
+    "type": "academic",
+    "title": "HBSE Board Results 2024–25",
+    "date": "2024-25",
+    "summary": "Class X: 46 students, 18 with merit, 100% pass. Class XII: 44 students, 8 with merit, 100% pass.",
+    "sourceImage": "image-8.jpg",
+    "verified": true
+  },
+  {
+    "id": "board-results-10th-2026",
+    "type": "academic",
+    "title": "HBSE Class X Result",
+    "date": "2026",
+    "summary": "64 students appeared, 64 passed (100%).",
+    "sourceImage": "image-3.jpg",
+    "verified": true
+  },
+  {
+    "id": "district-athletics",
+    "type": "sports",
+    "title": "SGFI District-Level Athletics Competition",
+    "date": null,
+    "results": [],
+    "sourceImage": "image-1.jpg",
+    "verified": false,
+    "note": "Confirm exact event names, placements, and date before publishing."
+  },
+  {
+    "id": "block-athletics-1",
+    "type": "sports",
+    "title": "SGFI Block-Level Athletics Competition",
+    "date": null,
+    "results": [],
+    "sourceImage": "image-5.jpg",
+    "verified": false,
+    "note": "Facebook-flagged 'AI content' — confirm underlying results data before use."
+  },
+  {
+    "id": "block-athletics-2",
+    "type": "sports",
+    "title": "SGFI Block-Level Athletics Competition",
+    "date": null,
+    "results": [],
+    "sourceImage": "image-6.jpg",
+    "verified": false,
+    "note": "Facebook-flagged 'AI content' — confirm underlying results data before use."
+  },
+  {
+    "id": "best-result-2022-23",
+    "type": "academic",
+    "title": "Best Result Achievers 2022–23",
+    "date": "2022-23",
+    "summary": null,
+    "sourceImage": "image-4.jpg",
+    "verified": false,
+    "note": "Historical trust signal — confirm exact wording/stats before publishing."
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "colors": {
+    "primary": { "value": "#1B2A56", "role": "navy — crest text, headers" },
+    "secondary": { "value": "#B3122A", "role": "crimson red — shield border, banners" },
+    "accent": { "value": "#D4AF37", "role": "gold — trophies, laurels, highlights" },
+    "tertiary": { "value": "#C2185B", "role": "magenta — crest emblem background, sparing use only" },
+    "background": { "value": "#FBF9F5", "role": "warm off-white" },
+    "text": { "value": "#22252B", "role": "charcoal" }
+  },
+  "typography": {
+    "heading": { "family": "Playfair Display, Merriweather, serif", "note": "conveys heritage/trust" },
+    "body": { "family": "Inter, Poppins, sans-serif" },
+    "devanagari": { "family": "Noto Sans Devanagari, sans-serif", "note": "for the Sanskrit motto and any Hindi content" }
+  },
+  "radius": {
+    "button": "8px",
+    "card": "12-16px"
+  },
+  "spacing": {
+    "grid": "8pt"
+  },
+  "motion": {
+    "level": "minimal",
+    "note": "subtle fade/slide on scroll only — no parallax or heavy motion"
+  },
+  "_source_of_truth_note": "Palette derived from visual inspection of crest/posters, not the original logo file. Re-derive exact hex values once a source logo asset is supplied (see docs/content-checklist.md)."
+}
