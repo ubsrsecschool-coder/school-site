@@ -1,72 +1,77 @@
 {
-  "_palette": "Red Oxide & Limewash",
-  "_rationale": "Sampled from materials that physically exist at this school rather than picked as brand colours. The school's own photographs show a peach/salmon plaster facade and a tan/beige block; the palette is built from that plaster, from red-oxide (IPS) flooring common to Indian school buildings, limewash walls and aged brass. Earlier navy+gold and maroon schemes were rejected for reading synthetic — saturated, cool-leaning reds read as dye, not material.",
+  "_palette": "Forest Green & Cream",
+  "_rationale": "Taken from the school's own photographs: every block has green window glass against peach plaster and open sky. Green is therefore already the building's accent colour, not an imposed one. Earlier navy+gold read as a generic prestige cliche, maroon and red-oxide both read as synthetic dye, and a full-bleed dark brown hero read muddy. The fix was value as much as hue: the landing section is now a LIGHT field so the photographs carry the colour, with deep green reserved for type and the results/footer bands.",
   "colors": {
     "ink": {
-      "value": "#402219",
-      "role": "umber — hero, dark sections, footer"
+      "value": "#14322A",
+      "role": "deep forest — results band and footer only"
     },
-    "oxide": {
-      "value": "#96452F",
+    "green": {
+      "value": "#1C4A3C",
       "role": "primary — headings, buttons, links"
     },
-    "oxide2": {
-      "value": "#A85539",
-      "role": "lighter oxide — gradients, hover states"
+    "green2": {
+      "value": "#276655",
+      "role": "lighter green — gradients, hover states"
     },
-    "clay": {
-      "value": "#B5674A",
-      "role": "plaster tint — italic type, hover borders"
+    "greenSoft": {
+      "value": "#4F6B5E",
+      "role": "muted green — italic type, secondary icons"
     },
     "stone": {
-      "value": "#6B5D4F",
-      "role": "grey-brown — utility icons, date blocks, metadata"
+      "value": "#5E6D64",
+      "role": "sage-grey — utility icons, date blocks, metadata"
     },
     "brass": {
       "value": "#C08A3E",
-      "role": "aged brass accent — rules, small fills, dark-field text"
+      "role": "aged brass accent — rules, small fills"
     },
     "brassLight": {
-      "value": "#E3C48A",
+      "value": "#E8CF9E",
       "role": "accent tint — type and hairlines on dark fields"
     },
     "brassDark": {
-      "value": "#7E5A1E",
-      "role": "accent darkened for small text on limewash (5.6:1)"
+      "value": "#8A6118",
+      "role": "accent darkened for small text on cream (5.2:1)"
+    },
+    "peach": {
+      "value": "#F3E1D6",
+      "role": "tint echoing the building's plaster — hero wash, soft panels"
     },
     "error": {
       "value": "#BF3B2B",
       "role": "form validation and 'unverified' flags ONLY — never a brand colour"
     },
-    "limewash": {
-      "value": "#F7F2E8",
+    "cream": {
+      "value": "#FAF7F0",
       "role": "page ground"
     },
     "paper": {
-      "value": "#FDFAF3",
+      "value": "#FFFDF9",
       "role": "raised surfaces, cards"
     },
     "sand": {
-      "value": "#EFE7D8",
+      "value": "#F0EBE0",
       "role": "tinted panels, icon chip backgrounds"
     },
     "line": {
-      "value": "#E3D9C7",
+      "value": "#E4DDD0",
       "role": "hairlines, borders"
     },
     "text": {
-      "value": "#2B211B",
-      "role": "warm near-black body text (14.1:1 on limewash)"
+      "value": "#1B241F",
+      "role": "near-black, green-tinted (14.9:1 on cream)"
     },
     "muted": {
-      "value": "#6E605A",
-      "role": "warm muted secondary text (5.4:1 on limewash)"
+      "value": "#5E6862",
+      "role": "muted secondary text (5.4:1 on cream)"
     }
   },
   "colorRoles": {
-    "brandAndActions": "oxide",
+    "brandAndActions": "green",
     "utilityAndMetadata": "stone",
     "accent": "brass",
+    "photographicTint": "peach",
     "validationOnly": "error"
   },
   "typography": {
@@ -80,7 +85,8 @@
     },
     "devanagari": {
       "family": "'Noto Serif Devanagari', serif",
-      "note": "serif so the Sanskrit motto shares a voice with the English display face"
+      "weights": "400, 500, 600, 700",
+      "note": "The motto is set BOLD (700) in a band at the top of the page, above the hero — it is the school's own line and reads as a statement, not a footnote."
     }
   },
   "radius": {
@@ -94,8 +100,8 @@
   },
   "shadows": {
     "note": "warm-tinted — a cool shadow on a warm ground reads grey and muddy",
-    "sh1": "0 1px 2px rgba(64,34,25,.05), 0 8px 24px -12px rgba(64,34,25,.18)",
-    "sh2": "0 2px 4px rgba(64,34,25,.07), 0 24px 56px -20px rgba(64,34,25,.26)"
+    "sh1": "0 1px 2px rgba(20,50,42,.05), 0 8px 24px -12px rgba(20,50,42,.18)",
+    "sh2": "0 2px 4px rgba(20,50,42,.07), 0 24px 56px -20px rgba(20,50,42,.26)"
   },
   "motion": {
     "level": "restrained",
@@ -113,5 +119,9 @@
     "magenta": "Saraswati disc background and the Devanagari motto",
     "gold": "ring around the disc",
     "_conflict": "The crest is navy/red/magenta/gold; the site palette is earth-derived. Reconcile before launch — either place the crest on limewash where it reads cleanly, or request a single-colour crest variant from the school."
+  },
+  "layout": {
+    "heroField": "light — the landing section must not be a dark full-bleed field; photographs carry the colour",
+    "mottoPlacement": "top band, directly beneath the header, above the hero"
   }
 }
