@@ -5,6 +5,9 @@
 **Source of truth for what may be published:** [docs/content-checklist.md](docs/content-checklist.md).
 **Source of truth for design:** [content/design-tokens.json](content/design-tokens.json) + [design/homepage.html](design/homepage.html).
 
+**To execute this plan, follow [docs/build-steps.md](docs/build-steps.md)** — the same sequence
+broken into numbered steps with commands, file contents and a verification check per step.
+
 This plan turns the requirements analysis into an engineering sequence. Where it and the
 requirements doc disagree, this file wins for *how to build*; the requirements doc wins for *what
 the school actually asked for*.

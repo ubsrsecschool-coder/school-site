@@ -4,8 +4,9 @@ Project context for Claude Code sessions working in this repo. Full detail lives
 [docs/requirements-analysis.md](docs/requirements-analysis.md) — this file is the quick-reference
 summary; that doc is the source of truth when the two disagree.
 
-**Building the site? Start with [PLAN.md](PLAN.md)** — the engineering sequence, the publish-gate
-architecture, and the phase exit criteria.
+**Building the site?** [PLAN.md](PLAN.md) is the architecture and the reasoning;
+[docs/build-steps.md](docs/build-steps.md) is the numbered execution guide. Start with the steps
+and refer back to the plan for the why.
 
 ## What this project is
 
