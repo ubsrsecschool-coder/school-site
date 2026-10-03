@@ -1,5 +1,8 @@
 # Step-by-Step Build Guide
 
+> **Stack changed 2026-10-03:** React + Vite replaces Next.js. Phase order, exit criteria and the
+> standing rules still apply; file paths and commands differ. See [DECISIONS.md](../DECISIONS.md).
+
 The executable version of [PLAN.md](../PLAN.md). Work top to bottom. Every step has a **Verify**
 line — do not move on until it passes.
 

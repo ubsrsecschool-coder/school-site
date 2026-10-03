@@ -76,15 +76,15 @@
   },
   "typography": {
     "display": {
-      "family": "Fraunces, Georgia, 'Times New Roman', serif",
+      "family": "'Fraunces Variable', Fraunces, Georgia, 'Times New Roman', serif",
       "note": "soft serif with optical sizing — heritage without stuffiness"
     },
     "body": {
-      "family": "'Plus Jakarta Sans', system-ui, -apple-system, sans-serif",
+      "family": "'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif",
       "note": "deliberately not Inter/Roboto, which read as template defaults"
     },
     "devanagari": {
-      "family": "'Noto Serif Devanagari', serif",
+      "family": "'Noto Serif Devanagari', 'Fraunces Variable', serif",
       "weights": "400, 500, 600, 700",
       "note": "The motto is set BOLD (700) in a band at the top of the page, above the hero — it is the school's own line and reads as a statement, not a footnote."
     }

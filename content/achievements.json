@@ -6,7 +6,21 @@
     "date": "2024-25",
     "summary": "Class X: 46 students, 18 with merit, 100% pass. Class XII: 44 students, 8 with merit, 100% pass.",
     "sourceImage": "image-8.jpg",
-    "verified": true
+    "verified": true,
+    "classes": [
+      {
+        "label": "Class X",
+        "students": 46,
+        "merit": 18,
+        "passPercent": 100
+      },
+      {
+        "label": "Class XII",
+        "students": 44,
+        "merit": 8,
+        "passPercent": 100
+      }
+    ]
   },
   {
     "id": "board-results-10th-2026",
@@ -15,7 +29,15 @@
     "date": "2026",
     "summary": "64 students appeared, 64 passed (100%).",
     "sourceImage": "image-3.jpg",
-    "verified": true
+    "verified": true,
+    "classes": [
+      {
+        "label": "Class X",
+        "students": 64,
+        "passed": 64,
+        "passPercent": 100
+      }
+    ]
   },
   {
     "id": "district-athletics",

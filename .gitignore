@@ -29,3 +29,8 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+
+# Vite
+dist-ssr/
+*.tsbuildinfo
+.vercel

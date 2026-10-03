@@ -1,5 +1,9 @@
 # Build Plan — Uma Bharti Senior Secondary School Website
 
+> **Stack changed 2026-10-03:** the site is built with React + Vite, not Next.js. Read
+> [DECISIONS.md](DECISIONS.md) first — it lists what replaced each Next.js feature. Phases, the publish
+> gate, design rules and content rules below are unchanged.
+
 **Audience:** the developer (human or agent) implementing this site.
 **Source of truth for requirements:** [docs/requirements-analysis.md](docs/requirements-analysis.md) (sections A–K).
 **Source of truth for what may be published:** [docs/content-checklist.md](docs/content-checklist.md).

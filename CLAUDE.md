@@ -49,10 +49,11 @@ be published without confirmed parental/guardian consent (see checklist).
 
 ## Tech stack
 
-- **Framework:** Next.js (React) + Tailwind CSS
+- **Framework:** React + Vite + TypeScript + Tailwind CSS 4, prerendered to static HTML. Changed
+  from Next.js on 2026-10-03 — see [DECISIONS.md](DECISIONS.md).
 - **Content:** flat JSON files under `content/` (non-technical admin edits notices/results); consider
   a headless CMS (e.g. Sanity) later if budget allows
-- **Forms:** a form service (e.g. Formspree) or a serverless API route + email — no custom backend
+- **Forms:** a hosted form endpoint (Formspree-compatible, `VITE_ENQUIRY_ENDPOINT`) — no custom backend
 - **Hosting:** Vercel
 
 ## Folder structure
