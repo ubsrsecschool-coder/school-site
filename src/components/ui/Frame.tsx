@@ -24,7 +24,7 @@ export function Frame({ photo, caption, glyph, square, priority, className = "" 
           decoding="async"
           fetchPriority={priority ? "high" : "auto"}
         />
-        <span className="ring" aria-hidden="true" />
+        <span className="frame-ring" aria-hidden="true" />
         {caption && <span className="cap">{caption}</span>}
       </div>
     );
@@ -32,7 +32,7 @@ export function Frame({ photo, caption, glyph, square, priority, className = "" 
 
   return (
     <div className={classes} role="img" aria-label={caption ? `${caption}: photograph not yet supplied` : "Photograph not yet supplied"}>
-      <span className="ring" aria-hidden="true" />
+      <span className="frame-ring" aria-hidden="true" />
       {glyph && (
         <span className="glyph" aria-hidden="true">
           {glyph}

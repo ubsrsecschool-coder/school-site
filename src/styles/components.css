@@ -292,7 +292,7 @@
     flex: none;
     animation: pulse 2.6s var(--ease-brand) infinite;
   }
-  .frame > .ring {
+  .frame > .frame-ring {
     position: absolute;
     z-index: 3;
     border: 1px solid rgba(232, 207, 158, 0.18);
@@ -300,7 +300,7 @@
     inset: 14px;
     pointer-events: none;
   }
-  .frame.has-img > .ring {
+  .frame.has-img > .frame-ring {
     border-color: rgba(255, 255, 255, 0.22);
   }
 

@@ -25,3 +25,9 @@ export const school = {
 export const addressLine = `${school.location.locality}, ${school.location.city}, ${school.location.region}`;
 export const emailHref = `mailto:${school.email}`;
 export const primaryPhone = school.phones[0];
+
+export const whatsapp: { display: string; href: string } | undefined = undefined;
+
+export const mapQuery = `${school.name}, ${addressLine}`;
+export const mapSearchUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`;
+export const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(mapQuery)}&output=embed`;

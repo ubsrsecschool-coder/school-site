@@ -23,6 +23,7 @@
     color: var(--color-green);
     font-weight: 600;
     letter-spacing: -0.015em;
+    text-wrap: balance;
   }
   img {
     max-width: 100%;
