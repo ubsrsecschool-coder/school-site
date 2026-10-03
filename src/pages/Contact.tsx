@@ -1,6 +1,7 @@
 import { useRouteMeta } from "@/hooks/usePageMeta";
 import { addressLine, school } from "@/lib/school";
 import { ContactDetails } from "@/components/sections/ContactDetails";
+import { EnquiryCard } from "@/components/sections/EnquiryCard";
 import { MapEmbed } from "@/components/sections/MapEmbed";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
@@ -22,6 +23,11 @@ export function Contact() {
             <MapEmbed />
           </Reveal>
           <ContactDetails />
+        </div>
+        <div className="wrap mt-[clamp(48px,6vw,84px)] max-w-[760px]">
+          <Reveal>
+            <EnquiryCard kind="contact" id="message" />
+          </Reveal>
         </div>
       </section>
     </>

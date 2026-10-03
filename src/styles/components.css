@@ -816,7 +816,7 @@
   .field select,
   .field textarea {
     width: 100%;
-    min-height: 46px;
+    min-height: 51px;
     padding: 12px 14px;
     border-radius: var(--radius-sm);
     border: 1.5px solid var(--color-line);

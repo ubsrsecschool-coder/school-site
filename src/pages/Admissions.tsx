@@ -40,7 +40,7 @@ export function Admissions() {
             )}
           </div>
           <Reveal delay={2}>
-            <EnquiryCard />
+            <EnquiryCard id="enquiry" />
           </Reveal>
         </div>
       </section>
