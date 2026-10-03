@@ -1,0 +1,83 @@
+[
+  {
+    "path": "/",
+    "label": "Home",
+    "nav": false,
+    "index": true,
+    "priority": 1.0,
+    "title": "Uma Bharti Senior Secondary School | Bhora Kalan, Gurugram",
+    "description": "An English-medium school in Bhora Kalan, Gurugram, affiliated with HBSE and following the CBSE-pattern curriculum. Nursery to Class XII, since 1999."
+  },
+  {
+    "path": "/about",
+    "label": "About",
+    "nav": true,
+    "index": true,
+    "priority": 0.8,
+    "title": "About | Uma Bharti Sr. Sec. School",
+    "description": "About Uma Bharti Senior Secondary School: an English-medium school in Bhora Kalan, Gurugram, established in 1999, teaching Nursery to Class XII."
+  },
+  {
+    "path": "/about/chairman-message",
+    "label": "Message from the Chairman",
+    "nav": false,
+    "index": false,
+    "priority": 0.3,
+    "title": "Message from the Chairman | Uma Bharti Sr. Sec. School",
+    "description": "A message from the Chairman of Uma Bharti Senior Secondary School."
+  },
+  {
+    "path": "/academics",
+    "label": "Academics",
+    "nav": true,
+    "index": true,
+    "priority": 0.8,
+    "title": "Academics | Uma Bharti Sr. Sec. School",
+    "description": "Academics at Uma Bharti Senior Secondary School: English medium, HBSE-affiliated with a CBSE-pattern curriculum, with Science, Commerce and Humanities streams."
+  },
+  {
+    "path": "/admissions",
+    "label": "Admissions",
+    "nav": true,
+    "index": true,
+    "priority": 0.9,
+    "title": "Admissions 2026–27 | Uma Bharti Sr. Sec. School",
+    "description": "Admissions 2026–27 are open at Uma Bharti Senior Secondary School, Bhora Kalan, Gurugram. Scholarship-cum-admission test, no admission fee, and a tuition-fee concession for a third child."
+  },
+  {
+    "path": "/achievements",
+    "label": "Achievements",
+    "nav": true,
+    "index": true,
+    "priority": 0.7,
+    "title": "Achievements | Uma Bharti Sr. Sec. School",
+    "description": "Board results and sports achievements of Uma Bharti Senior Secondary School, Bhora Kalan, Gurugram."
+  },
+  {
+    "path": "/gallery",
+    "label": "Gallery",
+    "nav": true,
+    "index": true,
+    "priority": 0.6,
+    "title": "Gallery | Uma Bharti Sr. Sec. School",
+    "description": "Photographs of the Uma Bharti Senior Secondary School campus in Bhora Kalan, Gurugram."
+  },
+  {
+    "path": "/notices",
+    "label": "Notices",
+    "nav": true,
+    "index": true,
+    "priority": 0.7,
+    "title": "Notices | Uma Bharti Sr. Sec. School",
+    "description": "Notices and announcements from Uma Bharti Senior Secondary School, Bhora Kalan, Gurugram."
+  },
+  {
+    "path": "/contact",
+    "label": "Contact",
+    "nav": true,
+    "index": true,
+    "priority": 0.8,
+    "title": "Contact | Uma Bharti Sr. Sec. School",
+    "description": "Contact Uma Bharti Senior Secondary School, Bhora Kalan, Gurugram: phone numbers, email and address."
+  }
+]

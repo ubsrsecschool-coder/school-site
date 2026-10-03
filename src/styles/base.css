@@ -1,0 +1,104 @@
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 88px;
+  }
+  body {
+    margin: 0;
+    background: var(--color-cream);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    line-height: 1.08;
+    color: var(--color-green);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  button {
+    font: inherit;
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-brass);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  main:focus {
+    outline: none;
+  }
+  ::selection {
+    background: var(--color-brass-light);
+    color: var(--color-ink);
+  }
+}
+
+@utility wrap {
+  width: min(1240px, 100% - 48px);
+  margin-inline: auto;
+  @media (max-width: 680px) {
+    width: calc(100% - 32px);
+  }
+}
+
+@utility wrap-tight {
+  width: min(940px, 100% - 48px);
+  margin-inline: auto;
+  @media (max-width: 680px) {
+    width: calc(100% - 32px);
+  }
+}
+
+@utility pad {
+  padding-block: clamp(72px, 9vw, 132px);
+}
+
+@utility display-xl {
+  font-size: clamp(38px, 5.4vw, 70px);
+  letter-spacing: -0.028em;
+}
+
+@utility display-lg {
+  font-size: clamp(30px, 3.9vw, 50px);
+  letter-spacing: -0.022em;
+}
+
+@utility display-md {
+  font-size: clamp(23px, 2.3vw, 30px);
+}
+
+@utility lede {
+  font-size: clamp(16.5px, 1.35vw, 19px);
+  color: var(--color-muted);
+  line-height: 1.68;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

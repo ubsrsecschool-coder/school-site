@@ -20,5 +20,5 @@ for (const [name, value] of Object.entries(tokens.shadows)) {
 lines.push(`  --ease-brand: ${tokens.motion.easing};`);
 
 mkdirSync("src/styles", { recursive: true });
-writeFileSync("src/styles/tokens.generated.css", `@theme {\n${lines.join("\n")}\n}\n`);
+writeFileSync("src/styles/tokens.generated.css", `@theme static {\n${lines.join("\n")}\n}\n`);
 console.log(`tokens: wrote src/styles/tokens.generated.css (${lines.length} variables)`);
