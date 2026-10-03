@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import type { GalleryItem } from "@/lib/schema";
 import { Icon } from "@/components/ui/Icon";
+import { Picture } from "@/components/ui/Picture";
 
 interface LightboxProps {
   items: GalleryItem[];
@@ -49,7 +50,7 @@ export function Lightbox({ items, index, onChange }: LightboxProps) {
             <Icon name="close" />
           </button>
           <figure key={item.id}>
-            <img src={item.src} alt={item.alt} width={item.width} height={item.height} />
+            <Picture photo={item} />
             <figcaption>
               {item.caption}
               {items.length > 1 && index !== null && (

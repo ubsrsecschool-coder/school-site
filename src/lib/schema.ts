@@ -37,6 +37,7 @@ export const GalleryItemSchema = z.object({
   id: z.string(),
   section: z.enum(["campus", "events", "sports", "brand"]),
   src: z.string(),
+  webp: z.string().optional(),
   raw: z.string().optional(),
   alt: z.string().min(10, "alt text must actually describe the image"),
   caption: z.string(),

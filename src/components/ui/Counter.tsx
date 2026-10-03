@@ -19,6 +19,8 @@ export function Counter({ to, suffix = "", plain = false, className }: CounterPr
   useLayoutEffect(() => {
     const el = ref.current;
     if (!el || prefersReducedMotion() || !("IntersectionObserver" in window)) return;
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) return;
 
     el.textContent = formatCount(0, plain, suffix);
     let frame = 0;

@@ -1,7 +1,8 @@
 import type { GalleryItem } from "@/lib/schema";
+import { Picture } from "./Picture";
 
 interface FrameProps {
-  photo?: Pick<GalleryItem, "src" | "alt" | "width" | "height">;
+  photo?: Pick<GalleryItem, "src" | "webp" | "alt" | "width" | "height">;
   caption?: string;
   glyph?: string;
   square?: boolean;
@@ -15,11 +16,8 @@ export function Frame({ photo, caption, glyph, square, priority, className = "" 
   if (photo) {
     return (
       <div className={classes}>
-        <img
-          src={photo.src}
-          alt={photo.alt}
-          width={photo.width}
-          height={photo.height}
+        <Picture
+          photo={photo}
           loading={priority ? "eager" : "lazy"}
           decoding="async"
           fetchPriority={priority ? "high" : "auto"}

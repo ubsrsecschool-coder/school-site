@@ -20,7 +20,7 @@ export function Notices() {
       <section className="pad pt-[clamp(32px,4vw,56px)]">
         <div className="wrap-tight">
           {notices.length ? (
-            <NoticeAccordion notices={items} />
+            <NoticeAccordion notices={items} headingLevel={2} />
           ) : (
             <PendingNote>No notices are published at the moment.</PendingNote>
           )}

@@ -29,7 +29,7 @@ export function Footer() {
             </p>
           </div>
           <div>
-            <h4>School</h4>
+            <h2>School</h2>
             <ul>
               {schoolRoutes.map((route) => (
                 <li key={route.path}>
@@ -39,7 +39,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h4>Explore</h4>
+            <h2>Explore</h2>
             <ul>
               {exploreRoutes.map((route) => (
                 <li key={route.path}>
@@ -49,7 +49,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h4>Get in touch</h4>
+            <h2>Get in touch</h2>
             <ul>
               <li>
                 <a href={primaryPhone.href}>{primaryPhone.display}</a>

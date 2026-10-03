@@ -2,7 +2,7 @@ import { school } from "@/lib/school";
 
 export function MottoBand({ compact = false }: { compact?: boolean }) {
   return (
-    <div className={compact ? "motto-band compact" : "motto-band"}>
+    <section aria-label="School motto" className={compact ? "motto-band compact" : "motto-band"}>
       <div className="wrap">
         <span className="deva" lang="sa">
           {school.motto.devanagari}
@@ -13,6 +13,6 @@ export function MottoBand({ compact = false }: { compact?: boolean }) {
         </span>
         {!compact && <span className="en">{school.motto.translation}</span>}
       </div>
-    </div>
+    </section>
   );
 }

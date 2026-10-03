@@ -50,7 +50,7 @@ export function GalleryGrid() {
                 aria-haspopup="dialog"
                 onClick={() => setOpenIndex(index)}
               >
-                <Frame photo={photo} caption={photo.caption} square />
+                <Frame photo={photo} caption={photo.caption} square priority={index === 0} />
               </button>
             </Reveal>
           ))}

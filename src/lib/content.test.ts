@@ -20,6 +20,12 @@ describe("published content", () => {
     for (const item of gallery) expect(existsSync(join(publicDir, item.src))).toBe(true);
   });
 
+  it("only references WebP variants that exist", () => {
+    for (const item of gallery) {
+      if (item.webp) expect(existsSync(join(publicDir, item.webp))).toBe(true);
+    }
+  });
+
   it("keeps the tan block and the raster crest out of the public gallery", () => {
     expect(galleryItem("campus-tan-block")).toBeUndefined();
     expect(galleryItem("crest")).toBeUndefined();
