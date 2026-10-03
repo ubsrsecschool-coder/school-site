@@ -59,32 +59,25 @@ be published without confirmed parental/guardian consent (see checklist).
 ## Folder structure
 
 ```
-/app
-  /about
-  /academics
-  /admissions
-  /achievements
-  /gallery
-  /contact
-/components
-  Header, Footer, Hero, QuickFactsStrip, NoticeBoard, AchievementCard,
-  GalleryGrid, AdmissionEnquiryForm, ContactForm, MapEmbed
-/content
-  notices.json
-  achievements.json
-  gallery.json
-  faculty.json
-  design-tokens.json
-/public
-  /images
-/styles
+/src
+  /pages            About, Academics, Admissions, Achievements, Gallery, Notices, Contact, ...
+  /components       ui/ layout/ sections/ forms/
+  /lib              gate.ts, schema.ts, content.ts (THE publish gate), routes.json, seo.ts
+  /styles           index.css, base.css, components.css, tokens.generated.css (generated)
+/content            notices.json, achievements.json, gallery.json, faculty.json, design-tokens.json
+/public/images
+/scripts            tokens-to-css, content-report, optimize-images, prerender
 docs/
   requirements-analysis.md   — full spec (sections A–K)
   content-checklist.md       — condensed "needs verification / needs content" tracker
+  launch-checklist.md        — what is prepared for launch and what needs the owner
+  maintaining-the-site.md    — how to add notices, results and photos
+  school-office-guide.md     — plain-language guide for the school office
 ```
 
-Routes: `/`, `/about`, `/about/chairman-message`, `/about/principal-message`, `/academics`,
-`/admissions`, `/achievements`, `/gallery`, `/contact`, `/notices`.
+Routes: `/`, `/about`, `/about/chairman-message` (stub, noindex, unlinked), `/academics`,
+`/admissions`, `/achievements`, `/gallery`, `/contact`, `/notices`. `/about/principal-message`,
+`/faculty` and `/student-life` are deliberately not built: no content exists.
 
 ## Design system (as built — supersedes Section F of the spec)
 

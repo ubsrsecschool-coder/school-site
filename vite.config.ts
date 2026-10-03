@@ -8,6 +8,9 @@ export default defineConfig({
   resolve: {
     alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) },
   },
+  build: {
+    assetsInlineLimit: 0,
+  },
   test: {
     environment: "node",
     include: ["src/**/*.test.ts"],

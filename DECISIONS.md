@@ -81,3 +81,14 @@ owner and has not been made.
 - The homepage has no separate gallery preview. With two photographs it would repeat the campus
   section, so the campus section links to `/gallery` instead.
 - The WhatsApp row appears only when `whatsapp` in `src/lib/school.ts` is given a value.
+
+## Security headers (Phase 7)
+
+`vercel.json` sets a strict Content-Security-Policy: scripts, fonts and images from the site only,
+`frame-src` for Google Maps only, `connect-src` and `form-action` for the form provider only. Testing
+it in a browser found one real break: Vite inlines font files under 4KB as `data:` URIs, which the policy
+blocks. `build.assetsInlineLimit` is therefore `0`, so every font is a real file, rather than allowing
+`data:` fonts. If the form provider is not on `formspree.io`, `connect-src` and `form-action` must change
+or the form fails silently.
+
+The map is click-to-load: nothing is requested from Google until a visitor asks for it.
